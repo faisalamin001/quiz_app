@@ -19,7 +19,7 @@ export const Header = () => {
                 href='#'
                 className='text-white bg-blue-900 hover:bg-blue-800  font-medium rounded text-sm px-2 lg:px-3 py-1 lg:py-1.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700  '
               >
-                Logout as {session.user.name}
+                Logout as {session?.user?.name}
               </a>
             ) : (
               <a

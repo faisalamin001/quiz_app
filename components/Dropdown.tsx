@@ -40,7 +40,7 @@ const Dropdown = () => {
       </button>
       <div
         id='dropdown'
-        className='z-10 hidden bg-white divide-y divide-gray-100 rounded w-44 dark:bg-slate-800 shadow-[rgba(250,_250,_250,_0.2)_1px_10px_30px]'
+        className='z-10 hidden bg-white divide-y divide-gray-100 rounded w-44 dark:bg-slate-900 shadow-[rgba(250,_250,_250,_0.2)_1px_10px_30px]'
       >
         <ul
           className='py-2 text-sm text-gray-700 dark:text-gray-200'

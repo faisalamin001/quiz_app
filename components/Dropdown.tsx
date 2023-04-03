@@ -40,7 +40,7 @@ const Dropdown = () => {
       </button>
       <div
         id='dropdown'
-        className='z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700'
+        className='z-10 hidden bg-white divide-y divide-gray-100 rounded w-44 dark:bg-slate-800 shadow-[rgba(250,_250,_250,_0.2)_1px_10px_30px]'
       >
         <ul
           className='py-2 text-sm text-gray-700 dark:text-gray-200'
@@ -49,7 +49,7 @@ const Dropdown = () => {
           <li>
             <a
               href='#'
-              className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+              className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white border-b border-slate-600'
             >
               Profile
             </a>
@@ -57,7 +57,7 @@ const Dropdown = () => {
           <li>
             <a
               href='#'
-              className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+              className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white border-b border-slate-600'
             >
               Settings
             </a>

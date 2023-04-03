@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Header } from '../../components/Header';
+import Hero from './hero';
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <script src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js' />
       </Head>
       <Header />
-      <h1 className='text-6xl font-bold text-center'>Nextjs Quiz app</h1>
+      <Hero />
     </>
   );
 }

@@ -1,8 +1,6 @@
-import { useSession, signIn, signOut } from 'next-auth/react';
+import Dropdown from './Dropdown';
 
 export const Header = () => {
-  const { data: session } = useSession();
-
   return (
     <header>
       <nav className='bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800'>
@@ -13,23 +11,7 @@ export const Header = () => {
             </span>
           </a>
           <div className='flex items-center lg:order-2'>
-            {session ? (
-              <a
-                onClick={() => signOut()}
-                href='#'
-                className='text-white bg-blue-900 hover:bg-blue-800  font-medium rounded text-sm px-2 lg:px-3 py-1 lg:py-1.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700  '
-              >
-                Logout as {session?.user?.name}
-              </a>
-            ) : (
-              <a
-                onClick={() => signIn()}
-                href='#'
-                className='text-white bg-blue-900 hover:bg-blue-800  font-medium rounded text-sm px-2 lg:px-3 py-1 lg:py-1.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700  '
-              >
-                Login
-              </a>
-            )}
+            <Dropdown />
           </div>
         </div>
       </nav>

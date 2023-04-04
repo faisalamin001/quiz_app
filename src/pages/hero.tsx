@@ -11,9 +11,11 @@ const Hero = () => {
         <br />
         To The Test!
       </h1>
-      <button className='mt-16 text-white bg-gray-900 hover:border  font-medium rounded  px-16 py-3.5 mr-2 mb-2 '>
-        <Link href='/selectquiz'>Take the Quiz </Link>
-      </button>
+      <Link href='/selectquiz'>
+        <button className='mt-16 text-white bg-gray-900 hover:border  font-medium rounded  px-16 py-3.5 mr-2 mb-2 '>
+          Take the Quiz
+        </button>
+      </Link>
     </div>
   );
 };

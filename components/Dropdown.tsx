@@ -4,8 +4,6 @@ import Image from 'next/image';
 
 const Dropdown = () => {
   const { data: session } = useSession();
-  console.log(session);
-  const src = session?.user?.image;
 
   return (
     <>
@@ -19,24 +17,19 @@ const Dropdown = () => {
       <button
         id='dropdownDefaultButton'
         data-dropdown-toggle='dropdown'
-        className={
-          session
-            ? ''
-            : ' text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700'
-        }
+        className=' text-white bg-blue-700 hover:bg-blue-800  font-medium rounded text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700'
         type='button'
       >
-        {!session && <div onClick={() => signIn()}> Login</div>}
-        {session && (
-          <Image
-            loader={() => src}
-            src={src}
-            alt='user'
-            width={50}
-            height={50}
-            className='rounded-full'
-          />
-        )}
+        Login
+        {/* 
+        <Image
+          loader={() => mySrc}
+          src={mySrc}
+          alt='user'
+          width={50}
+          height={50}
+          className='rounded-full'
+        /> */}
       </button>
       <div
         id='dropdown'
@@ -66,7 +59,6 @@ const Dropdown = () => {
           <li>
             <a
               href='#'
-              onClick={() => signOut()}
               className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 font-bold text-red-500'
             >
               Sign out

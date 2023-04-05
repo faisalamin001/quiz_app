@@ -9,14 +9,11 @@ const Card = ({ questions }) => {
   const [correctAnswer, setCorrectAnswer] = useState();
   // swipe function
   const onSwipe = (direction) => {
-    console.log('correct answer', correctAnswer, 'user', direction);
     setAllQuestions(allQuestions - 1);
     if (correctAnswer === 'True' && direction === 'right') {
       setScore(score + 1);
     } else if (correctAnswer === 'False' && direction === 'left') {
       setScore(score + 1);
-    } else {
-      console.log('wrong answer ');
     }
   };
 

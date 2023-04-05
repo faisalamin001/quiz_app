@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 export const useQuiz = create((set) => ({
-  amount: 10,
+  amount: 5,
   category: '',
   difficulty: '',
   setAmount: (amount: number) => set(() => ({ amount })),

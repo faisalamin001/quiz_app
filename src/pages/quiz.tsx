@@ -26,7 +26,7 @@ const Quiz = () => {
 
   return (
     <div className='text-center pb-12 sm:pb-16 overflow-hidden	 bg-gradient-to-r from-slate-700 to-slate-900 text-white'>
-      <div className='flex justify-between pt-4  sm:justify-around text-xl items-center'>
+      <div className='flex justify-between pt-12  sm:justify-around text-xl items-center'>
         <p className='flex justify-center  rounded px-3 py-1  text-red-600 items-center'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

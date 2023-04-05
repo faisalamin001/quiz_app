@@ -18,15 +18,15 @@ const Card = ({ questions }) => {
   };
 
   return (
-    <div className=' relative py-24  '>
-      <div className='flex justify-between px-4 sm:justify-around mb-16 -mt-10 items-center'>
+    <div className=' relative py-32  '>
+      {/* <div className='flex justify-between px-4 sm:justify-around mb-16 -mt-10 items-center'>
         <p className='text-center bg-slate-800 rounded px-2 py-0.5'>
           Questions <span className='font-bold'>{questions.length}</span>{' '}
         </p>
         <p className='text-center bg-slate-800 rounded px-2 py-0.5'>
           Score <span className='font-bold'>{score}</span>{' '}
         </p>
-      </div>
+      </div> */}
 
       {questions.length < 1 && (
         <div>
@@ -74,6 +74,7 @@ const Card = ({ questions }) => {
 
       {questions.map((item) => (
         <div
+          className='pb-1'
           onMouseEnter={() => setCorrectAnswer(item.answer)}
           onTouchStart={() => setCorrectAnswer(item.answer)}
           key={item.question}
@@ -92,6 +93,7 @@ const Card = ({ questions }) => {
           <p className='text-9xl font-bold animate-pulse'>
             {score}/{questions.length}
           </p>
+          <p className='mt-6 text-2xl'>You scored</p>
           <Link href='/selectquiz'>
             <p className='mt-24 rounded m-auto bg-slate-900 py-3 px-8 w-48'>
               Start again

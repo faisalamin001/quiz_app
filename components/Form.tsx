@@ -6,7 +6,7 @@ const Form = () => {
   const setCategory = useQuiz((state) => state.setCategory);
   const setDifficulty = useQuiz((state) => state.setDifficulty);
   return (
-    <div className='w-full sm:w-1/2 m-auto text-center'>
+    <div className='w-full p-4 sm:w-1/2 m-auto text-center'>
       <form>
         {/* <div className='mb-6 text-left'>
           <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>

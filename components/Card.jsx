@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import TinderCard from 'react-tinder-card';
+import Link from 'next/link';
 
 const Card = ({ questions }) => {
   const [score, setScore] = useState(0);
@@ -37,7 +38,7 @@ const Card = ({ questions }) => {
           key={item.question}
         >
           <TinderCard
-            className='bg-slate-900 rounded-xl tracking-wider leading-loose	h-96	 sm:h-80 w-64 border border-slate-200  cursor-pointer  px-4 py-16 text-xl absolute m-auto left-0 right-0'
+            className='bg-slate-900 rounded-xl z-50	 tracking-wider leading-loose	h-96	 w-64 border border-slate-200  cursor-pointer  px-4 py-12 text-xl absolute m-auto left-0 right-0'
             onSwipe={onSwipe}
             preventSwipe={['up', 'down']}
           >
@@ -49,9 +50,11 @@ const Card = ({ questions }) => {
         <p className='text-9xl font-bold animate-pulse'>
           {score}/{questions.length}
         </p>
-        <p className='mt-24 rounded m-auto bg-slate-900 py-3 px-8 w-48'>
-          Start again
-        </p>
+        <Link href='/selectquiz'>
+          <p className='mt-24 rounded m-auto bg-slate-900 py-3 px-8 w-48'>
+            Start again
+          </p>
+        </Link>
       </div>
       <div className='flex mt-96 pt-20 sm:mt-52 justify-between px-4  sm:justify-around text-xl items-center'>
         <p className='flex justify-center  rounded px-3 py-1  text-red-600 items-center'>

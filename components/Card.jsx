@@ -4,11 +4,12 @@ import TinderCard from 'react-tinder-card';
 
 const Card = ({ questions }) => {
   const [score, setScore] = useState(0);
-  const [userAnswer, setUserAnswer] = useState();
+  const [allQuestions, setAllQuestions] = useState(questions.length);
   const [correctAnswer, setCorrectAnswer] = useState();
   // swipe function
   const onSwipe = (direction) => {
     console.log('correct answer', correctAnswer, 'user', direction);
+    setAllQuestions(allQuestions - 1);
     if (correctAnswer === 'True' && direction === 'right') {
       setScore(score + 1);
     } else if (correctAnswer === 'False' && direction === 'left') {
@@ -35,19 +36,23 @@ const Card = ({ questions }) => {
           onTouchStart={() => setCorrectAnswer(item.answer)}
           key={item.question}
         >
-          {true ? (
-            <TinderCard
-              className='bg-slate-900 rounded-xl tracking-wider leading-loose	h-96	 sm:h-80 w-64 border border-slate-200  cursor-pointer  px-4 py-16 text-xl absolute m-auto left-0 right-0'
-              onSwipe={onSwipe}
-              preventSwipe={['up', 'down']}
-            >
-              {item.question}
-            </TinderCard>
-          ) : (
-            'hello'
-          )}
+          <TinderCard
+            className='bg-slate-900 rounded-xl tracking-wider leading-loose	h-96	 sm:h-80 w-64 border border-slate-200  cursor-pointer  px-4 py-16 text-xl absolute m-auto left-0 right-0'
+            onSwipe={onSwipe}
+            preventSwipe={['up', 'down']}
+          >
+            {item.question}
+          </TinderCard>
         </div>
       ))}
+      <div className='text-center mt-24'>
+        <p className='text-9xl font-bold animate-pulse'>
+          {score}/{questions.length}
+        </p>
+        <p className='mt-24 rounded m-auto bg-slate-900 py-3 px-8 w-48'>
+          Start again
+        </p>
+      </div>
       <div className='flex mt-96 pt-20 sm:mt-52 justify-between px-4  sm:justify-around text-xl items-center'>
         <p className='flex justify-center  rounded px-3 py-1  text-red-600 items-center'>
           <svg

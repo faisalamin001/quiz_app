@@ -30,6 +30,7 @@ const Card = ({ questions }) => {
           Score <span className='font-bold'>{score}</span>{' '}
         </p>
       </div>
+
       {questions.length < 1 && (
         <div>
           {' '}
@@ -89,52 +90,18 @@ const Card = ({ questions }) => {
           </TinderCard>
         </div>
       ))}
-      <div className='text-center mt-24'>
-        <p className='text-9xl font-bold animate-pulse'>
-          {score}/{questions.length}
-        </p>
-        <Link href='/selectquiz'>
-          <p className='mt-24 rounded m-auto bg-slate-900 py-3 px-8 w-48'>
-            Start again
+      {questions.length > 0 && (
+        <div className='text-center '>
+          <p className='text-9xl font-bold animate-pulse'>
+            {score}/{questions.length}
           </p>
-        </Link>
-      </div>
-      <div className='flex mt-96 pt-20 sm:mt-52 justify-between px-4  sm:justify-around text-xl items-center'>
-        <p className='flex justify-center  rounded px-3 py-1  text-red-600 items-center'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='1.5'
-            stroke='currentColor'
-            class='w-6 h-6 mr-2'
-          >
-            <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18'
-            />
-          </svg>
-          False
-        </p>{' '}
-        <p className='flex justify-center  text-green-600  rounded px-3 py-1  items-center'>
-          True{' '}
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='1.5'
-            stroke='currentColor'
-            class='w-6 h-6 ml-2'
-          >
-            <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3'
-            />
-          </svg>
-        </p>
-      </div>
+          <Link href='/selectquiz'>
+            <p className='mt-24 rounded m-auto bg-slate-900 py-3 px-8 w-48'>
+              Start again
+            </p>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

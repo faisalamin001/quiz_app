@@ -8,6 +8,7 @@ const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const amount = useQuiz((state) => state.amount);
   const category = useQuiz((state) => state.category);
+
   useEffect(() => {
     fetch(
       `https://opentdb.com/api.php?amount=${amount}&category=${category}&type=boolean`

@@ -3,13 +3,21 @@ import { useState } from 'react';
 import TinderCard from 'react-tinder-card';
 import Link from 'next/link';
 
-const Card = ({ questions }) => {
+type QUESTIONSTYPE = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
+type Props = {
+  questions: QUESTIONSTYPE[];
+};
+
+const Card = ({ questions }: Props) => {
   const [score, setScore] = useState(0);
-  const [allQuestions, setAllQuestions] = useState(questions.length);
-  const [correctAnswer, setCorrectAnswer] = useState();
+  const [correctAnswer, setCorrectAnswer] = useState<string>();
   // swipe function
-  const onSwipe = (direction) => {
-    setAllQuestions(allQuestions - 1);
+  const onSwipe = (direction: unknown) => {
     if (correctAnswer === 'True' && direction === 'right') {
       setScore(score + 1);
     } else if (correctAnswer === 'False' && direction === 'left') {
@@ -28,7 +36,7 @@ const Card = ({ questions }) => {
         </p>
       </div> */}
 
-      {questions.length < 1 && (
+      {questions && questions.length < 1 && (
         <div>
           {' '}
           <div class=' shadow  p-4 rounded-xl bg-slate-900 max-w-sm h-96	 w-64 border border-slate-200  mx-auto'>

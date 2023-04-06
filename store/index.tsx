@@ -1,6 +1,15 @@
 import { create } from 'zustand';
 
-export const useQuiz = create((set) => ({
+type QuizState = {
+  amount: number;
+  category: string;
+  difficulty: string;
+  setAmount: (amount: number) => void;
+  setCategory: (category: string) => void;
+  setDifficulty: (difficulty: string) => void;
+};
+
+export const useQuiz = create<QuizState>((set) => ({
   amount: 5,
   category: '',
   difficulty: '',

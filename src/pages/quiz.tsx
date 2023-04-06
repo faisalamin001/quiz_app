@@ -4,9 +4,15 @@ import { v4 as uuidv4 } from 'uuid';
 import { useQuiz } from '../../store';
 import Card from '../../components/Card';
 
+type QUESTIONSTYPE = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
 const Quiz = () => {
-  const [questions, setQuestions] = useState([]);
-  const amount = useQuiz((state) => state.amount);
+  const [questions, setQuestions] = useState<QUESTIONSTYPE[]>([]);
+  const amount: number = useQuiz((state) => state.amount);
   const category = useQuiz((state) => state.category);
 
   useEffect(() => {
@@ -33,13 +39,13 @@ const Quiz = () => {
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
-            stroke-width='1.5'
+            strokeWidth='1.5'
             stroke='currentColor'
             className='w-6 h-6 mr-2'
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeLinecap='round'
+              strokeLinejoin='round'
               d='M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18'
             />
           </svg>
@@ -51,13 +57,13 @@ const Quiz = () => {
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
-            stroke-width='1.5'
+            strokeWidth='1.5'
             stroke='currentColor'
-            class='w-6 h-6 ml-2'
+            className='w-6 h-6 ml-2'
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeLinecap='round'
+              strokeLinejoin='round'
               d='M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3'
             />
           </svg>
